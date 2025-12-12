@@ -58,6 +58,10 @@
   xdg-desktop-portal-gtk
   xdg-desktop-portal-wlr
 ];
+programs.nautilus-open-any-terminal = {
+  enable = true;
+  terminal = "ghostty";
+};
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
