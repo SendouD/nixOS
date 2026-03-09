@@ -30,6 +30,8 @@ in
     brave
     gcc
     steam-run
+    hyperfine
+    perf
     ghostty
     tealdeer
     xclip

@@ -160,9 +160,9 @@ hardware.nvidia = {
   programs.firefox.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
- 
+  
   #programs.nautilus-open-terminal.enable = true;
-
+  
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -170,6 +170,8 @@ hardware.nvidia = {
     neovim
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     neovim
+   ffmpeg
+     obs-studio
     wget
     brave
     ntfs3g
@@ -177,6 +179,9 @@ hardware.nvidia = {
     fastfetch
     curl
     gcc
+    ifuse
+    libimobiledevice
+    usbmuxd
     openssl
     pkg-config
     fontconfig
@@ -188,7 +193,7 @@ fileSystems."/mnt/personal" = {
   options = [ "rw" "uid=1000" "gid=100" "umask=0022" "nofail" ];
 
 };
-
+services.usbmuxd.enable=true;
 fileSystems."/mnt/coding" = {
   device = "/dev/disk/by-uuid/72BBDEE476F9717B";
   fsType = "ntfs-3g";
