@@ -200,6 +200,16 @@ fileSystems."/mnt/coding" = {
   options = [ "rw" "uid=1000" "gid=100" "umask=0022" "nofail" ];
 
 };
+# in configuration.nix or home-manager
+systemd.user.services.battery-alert = {
+  description = "Battery Alert Script";
+  wantedBy = [ "default.target" ];
+
+  serviceConfig = {
+    ExecStart = "${pkgs.bash}/bin/bash /home/sendou/nixos-flakes/scripts/battery-alert.sh";
+    Restart = "always";
+  };
+};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
