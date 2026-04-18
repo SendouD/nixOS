@@ -169,9 +169,10 @@ hardware.nvidia = {
   environment.systemPackages = with pkgs; [
     neovim
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    burpsuite
     neovim
-   ffmpeg
-     obs-studio
+    ffmpeg
+    obs-studio
     wget
     brave
     ntfs3g

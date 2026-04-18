@@ -29,6 +29,7 @@ in
     git
     brave
     gcc
+    davinci-resolve
     steam-run
     hyperfine
     perf
