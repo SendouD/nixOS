@@ -3,8 +3,8 @@
 THRESHOLD=79
 
 while true; do
-    battery=$(cat /sys/class/power_supply/BAT0/capacity)
-    status=$(cat /sys/class/power_supply/BAT0/status)
+    battery=$(cat /sys/class/power_supply/BAT1/capacity)
+    status=$(cat /sys/class/power_supply/BAT1/status)
 
     if [ "$status" = "Discharging" ] && [ "$battery" -le "$THRESHOLD" ]; then
         notify-send "Low Battery" "Battery is at ${battery}%"

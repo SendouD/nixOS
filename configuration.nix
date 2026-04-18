@@ -162,7 +162,7 @@ hardware.nvidia = {
   nixpkgs.config.allowUnfree = true;
   
   #programs.nautilus-open-terminal.enable = true;
-  
+  services.dunst.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -172,6 +172,9 @@ hardware.nvidia = {
     burpsuite
     neovim
     ffmpeg
+    libnotify
+    pulseaudio
+    dunst
     obs-studio
     wget
     brave
