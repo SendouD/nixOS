@@ -160,7 +160,12 @@ hardware.nvidia = {
   programs.firefox.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+ 
+  programs.vim = {
+    enable = true;
+    package = pkgs.vimHugeX;
+  };
+ 
   #programs.nautilus-open-terminal.enable = true;
   #services.dunst.enable = true;
   services.cron.enable = true;
