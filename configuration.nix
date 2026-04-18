@@ -163,7 +163,10 @@ hardware.nvidia = {
   
   #programs.nautilus-open-terminal.enable = true;
   #services.dunst.enable = true;
-
+  services.cron.enable = true;
+  services.cron.systemCronJobs = [
+  "* * * * * sendou /home/sendou/nixos-flakes/scripts/battery-alert.sh"
+  ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
