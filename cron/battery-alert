@@ -1,0 +1,5 @@
+SHELL=/bin/sh
+PATH=/run/current-system/sw/bin:/usr/bin:/bin
+
+# Run every minute; if script not running, start it in background.
+* * * * * sendou pgrep -f '/home/sendou/nixos-flakes/scripts/battery-alert.sh' > /dev/null || nohup /run/current-system/sw/bin/bash /home/sendou/nixos-flakes/scripts/battery-alert.sh >/dev/null 2>&1 &
