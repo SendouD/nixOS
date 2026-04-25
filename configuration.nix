@@ -174,10 +174,24 @@ hardware.nvidia = {
   ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  services.redis.servers.main = {
+  enable = true;
+  port = 6379;
+  } ;
+ services.postgresql = {
+  enable = true;
+  package = pkgs.postgresql_15;
+  enableTCPIP = true;
+
+  extensions = with pkgs.postgresql_15.pkgs; [
+    pgvector
+  ];
+ }; 
+ environment.systemPackages = with pkgs; [
     neovim
     burpsuite
     neovim
+    redis
     ffmpeg
     libnotify
     pulseaudio
@@ -187,6 +201,7 @@ hardware.nvidia = {
     brave
     ntfs3g
     git
+    macchanger
     fastfetch
     curl
     gcc
@@ -197,6 +212,8 @@ hardware.nvidia = {
     pkg-config
     fontconfig
     docker-compose
+    python3
+    python3Packages.pip
 ];
 fileSystems."/mnt/personal" = {
   device = "/dev/disk/by-uuid/608E06F06BB5A432";

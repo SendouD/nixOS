@@ -29,9 +29,11 @@ in
     git
     brave
     gcc
+    dbeaver-bin
     davinci-resolve
     steam-run
     hyperfine
+    ollama
     perf
     ghostty
     tealdeer
